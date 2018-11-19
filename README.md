@@ -1,2 +1,2 @@
-# ReadingManager
+# 讀書管理
 読書管理プログラム
