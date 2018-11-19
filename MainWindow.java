@@ -9,7 +9,8 @@ public class MainWindow extends JFrame {
 
 		// ウィンドウ設定 ---------------------------------------------------
 		setTitle(title);
-		setSize(400, 400);
+		setSize(500, 505);
+		setResizable(false);
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationByPlatform(true);
@@ -59,11 +60,95 @@ public class MainWindow extends JFrame {
 		// タブペイン設定 --------------------------------------------------
 		JTabbedPane tabbedPane = new JTabbedPane();
 
-		JPanel bookPanel = new JPanel();
+		JPanel bookListPanel = new JPanel();
+		String[][] data = {
+				{"量子力学", "わい", "物理"},
+				{"哲学", "あああ", "数学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"},
+				{"電気回路", "あの人", "工学"}
+		};
+		String[] columns = {"題", "著者", "分野"};
+		JTable bookList = new JTable(data, columns);
+		JScrollPane bookListPane = new JScrollPane(bookList);
+		bookListPane.setPreferredSize(new Dimension(480, 400));
+
+		JButton addButton = new JButton("追加");
+		JButton editButton = new JButton("編輯");
+		JButton deleteButton = new JButton("削除");
+		bookListPanel.add(bookListPane);
+		bookListPanel.add(addButton);
+		bookListPanel.add(editButton);
+		bookListPanel.add(deleteButton);
+
+
 		JPanel unreadPanel = new JPanel();
+		JTable unreadList = new JTable(data, columns);
+		JScrollPane unreadListPane = new JScrollPane(unreadList);
+		unreadListPane.setPreferredSize(new Dimension(480, 400));
+
+		JButton openButton = new JButton("開巻");
+		unreadPanel.add(unreadListPane);
+		unreadPanel.add(openButton);
+
+
 		JPanel readingPanel = new JPanel();
+		JTable readingList = new JTable(data, columns);
+		JScrollPane readingListPane = new JScrollPane(readingList);
+		readingListPane.setPreferredSize(new Dimension(480, 400));
+		
+		JButton readButton = new JButton("読了");
+		readingPanel.add(readingListPane);
+		readingPanel.add(openButton);
+		
+		
 		JPanel readPanel = new JPanel();
-		tabbedPane.add("文書一覧", bookPanel);
+		JTable readList = new JTable(data, columns);
+		JScrollPane readListPane = new JScrollPane(readList);
+		readListPane.setPreferredSize(new Dimension(480, 400));
+		readPanel.add(readListPane);
+
+		tabbedPane.add("文書一覧", bookListPanel);
 		tabbedPane.add("未読", unreadPanel);
 		tabbedPane.add("読中", readingPanel);
 		tabbedPane.add("既読", readPanel);

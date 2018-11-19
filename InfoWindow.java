@@ -5,8 +5,10 @@ public class InfoWindow extends JFrame {
 	public InfoWindow(MainWindow owner, String name, String version) {
 		setTitle("情報");
 		setSize(200, 100);
+		setResizable(false);
 
 		setLocationRelativeTo(owner);
+		setAlwaysOnTop(true);
 
 		JPanel panel = new JPanel();
 
