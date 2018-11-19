@@ -139,7 +139,7 @@ public class MainWindow extends JFrame {
 		
 		JButton readButton = new JButton("読了");
 		readingPanel.add(readingListPane);
-		readingPanel.add(openButton);
+		readingPanel.add(readButton);
 		
 		
 		JPanel readPanel = new JPanel();
