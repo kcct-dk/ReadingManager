@@ -54,6 +54,16 @@ public class MainWindow extends JFrame {
 		bookMenu.add(deleteBookItem);
 		menuBar.add(bookMenu);
 
+		JMenu unreadMenu = new JMenu("未読");
+		JMenuItem openBookItem = new JMenuItem("開巻");
+		unreadMenu.add(openBookItem);
+		menuBar.add(unreadMenu);
+
+		JMenu readingMenu = new JMenu("読中");
+		JMenuItem readBookItem = new JMenuItem("読了");
+		readingMenu.add(readBookItem);
+		menuBar.add(readingMenu);
+
 		setJMenuBar(menuBar);
 		// -----------------------------------------------------------------
 
@@ -148,7 +158,7 @@ public class MainWindow extends JFrame {
 		readListPane.setPreferredSize(new Dimension(480, 400));
 		readPanel.add(readListPane);
 
-		tabbedPane.add("文書一覧", bookListPanel);
+		tabbedPane.add("文書", bookListPanel);
 		tabbedPane.add("未読", unreadPanel);
 		tabbedPane.add("読中", readingPanel);
 		tabbedPane.add("既読", readPanel);
